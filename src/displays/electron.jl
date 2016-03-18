@@ -46,6 +46,7 @@ end
 function Base.display(p::ElectronPlot)
     w = get_window(p)
     loadjs(p.view)
+    process_units!(p.plot)
     @js w begin
         trydiv = document.getElementById($(string(p.plot.divid)))
         if trydiv == nothing

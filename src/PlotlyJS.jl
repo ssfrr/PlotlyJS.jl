@@ -3,6 +3,7 @@ module PlotlyJS
 using JSON
 using Blink
 using Colors
+using Requires
 
 # globals for this package
 const _js_path = joinpath(dirname(dirname(@__FILE__)),
@@ -26,6 +27,7 @@ include("display.jl")
 include("subplots.jl")
 include("api.jl")
 include("savefig.jl")
+include("filters.jl")
 
 # Set some defaults for constructing `Plot`s
 Plot() = Plot(GenericTrace{Dict{Symbol,Any}}[], Layout(), Base.Random.uuid4())
